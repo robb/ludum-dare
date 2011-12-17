@@ -8,8 +8,11 @@ class Actor
     @speed       = 3
 
   move: (frameCount) ->
-    return if @position.x is @target.x and
-              @position.y is @target.y
+    if @position.x is @target.x and
+       @position.y is @target.y
+      @state = 'default' if @state is 'walking'
+
+      return
 
     if @state isnt 'walking'
       @state        = 'walking'

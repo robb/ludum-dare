@@ -7,12 +7,12 @@ class Game
 
     @actors = [
       pothead,
+      hipster,
       hero,
-      emo,
-      hipster
+      emo
     ]
 
-    hero.position = x: 52, y: 95
+    hero.position = x:  52, y: 95
     hero.target   = x: 502, y: 95
 
     emo.position     = emo.target     = x:  32, y: 94

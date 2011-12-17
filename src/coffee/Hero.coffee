@@ -12,8 +12,9 @@ class Hero extends Actor
       when 'default'
         switch Math.round(frameCount / 5) % 90
           # Blink
-          when 4, 5, 63, 65, 83, 84 then @spriteIndex = 0
+          when 4, 5, 63, 65, 83, 84 then @spriteIndex = 1
           else
-            @spriteIndex = 1
+            @spriteIndex = 0
       when 'walking'
-        @spriteIndex = 1
+        # Walking frames are 2 through 7
+        @spriteIndex = 2 + Math.floor((frameCount - @walkingStart) / 4) % 6

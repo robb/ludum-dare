@@ -3,12 +3,8 @@ if DEBUG
 else
   LOG = ->
 
-window.requestAnimationFrame ||= window.webkitRequestAnimationFrame or
-                                 window.mozRequestAnimationFrame    or
-                                 window.oRequestAnimationFrame      or
-                                 window.msRequestAnimationFrame     or
-                                 (callback, element) ->
-                                   window.setTimeout callback, 1000 / 60
+window.requestAnimationFrame ||= (callback, element) ->
+                                   window.setTimeout callback, 1000 / 25
 
 Settings =
   mainCanvasID: 'main'

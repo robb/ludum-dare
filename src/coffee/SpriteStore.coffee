@@ -75,9 +75,9 @@ class SpriteStore
         spriteCount: 2
 
       'hero':
-        size:        {width: 18, height: 54}
+        size:        {width: 27, height: 56}
         file:        'hero.png'
-        spriteCount: 2
+        spriteCount: 8
 
     'backgrounds':
       'flat':
