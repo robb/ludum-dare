@@ -3,9 +3,9 @@ class ActorLayer extends Layer
     super
 
   redraw: ->
-    for name, character of @game.characters
-      sprite = @getSprite 'actors', name
-      {x, y} = character.position
+    for actor in @game.actors
+      sprite = @getSprite 'actors', actor.file
+      {x, y} = actor.position
 
       if DEBUG
         @context.fillStyle = 'FF0000'

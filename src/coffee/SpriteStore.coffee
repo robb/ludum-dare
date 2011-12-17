@@ -67,11 +67,11 @@ class SpriteStore
         size:    {width: 30, height: 60}
         file:    'emo.png'
 
-#    'backgrounds':
-#      'flat':
-#        size: {width: 1024, height: 748}
-#        file: 'flat.png'
-#
+    'backgrounds':
+      'flat':
+        size: {width: 1024, height: 748}
+        file: 'flat.png'
+
 #      'bathroom':
 #        size: {width: 1024, height: 748}
 #        file: 'bathroom.png'

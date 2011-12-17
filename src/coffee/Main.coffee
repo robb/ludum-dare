@@ -1,15 +1,13 @@
 $ ->
-  g = @game =
-    characters:
-      'emo':
-        position: {x: 250, y: 50}
-      'pothead':
-        position: {x: 250, y: 150}
+  @game = new Game
 
   r = @renderer = new Renderer @game, ->
     LOG 'Renderer callback executed'
 
-    renderLoop = ->
+    mainLoop = ->
+      actor.animate() for actor in @game.actors
+
       r.render()
-      REQUEST_ANIMATION_FRAME renderLoop
-    renderLoop()
+      requestAnimationFrame mainLoop
+
+    mainLoop()
