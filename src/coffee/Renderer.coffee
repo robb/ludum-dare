@@ -10,7 +10,12 @@ class Renderer
     @spriteStore = new SpriteStore =>
       LOG 'Sprite store callback executed'
 
-      @actorLayer = new ActorLayer @, @game
+      @backgroundLayer = new BackgroundLayer @
+      @actorLayer      = new ActorLayer      @, @game
+
+      @layers = [
+        @backgroundLayer, @actorLayer
+      ]
 
       callback?()
 
@@ -20,12 +25,12 @@ class Renderer
 
     @clear @mainContext
 
-    join @actorLayer
+    join layer for layer in @layers
 
   clear: (context) ->
     context.clearRect 0, 0, Settings.canvasWidth, Settings.canvasHeight
 
   render: ->
-    @actorLayer.redraw()
+    layer.redraw() for layer in @layers when layer.needsRedraw
 
     @joinLayers()

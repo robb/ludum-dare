@@ -1,6 +1,6 @@
 class Emo extends Actor
   constructor: ->
-    @name = 'Erik'
-    @file = 'emo'
+    @name   = 'Erik'
+    @sprite = 'emo'
 
     super

@@ -7,9 +7,13 @@ buildFiles = [
   'SpriteStore',
   'Renderer',
   'Layer',
+  'BackgroundLayer',
   'ActorLayer',
   'Actor',
   'Emo',
+  'Pothead',
+  'Hipster',
+  'Hero',
   'Game',
   'Main'
 ]

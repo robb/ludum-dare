@@ -24,6 +24,8 @@ class SpriteStore
           {width, height}    = sprite.size
           spriteImage        = new Image
           spriteImage.onload = =>
+            LOG "Loaded #{name}"
+
             spriteCount = sprite.spriteCount or 1
 
             for index in [0...spriteCount]
@@ -67,12 +69,21 @@ class SpriteStore
         size:    {width: 30, height: 60}
         file:    'emo.png'
 
+      'hipster':
+        size:        {width: 19, height: 54}
+        file:        'mitte-hipster.png'
+        spriteCount: 2
+
+      'hero':
+        size:        {width: 18, height: 54}
+        file:        'hero.png'
+        spriteCount: 2
+
     'backgrounds':
       'flat':
-        size: {width: 1024, height: 748}
+        size: {width: 700, height: 184}
         file: 'flat.png'
 
 #      'bathroom':
 #        size: {width: 1024, height: 748}
 #        file: 'bathroom.png'
-#

@@ -1,13 +1,21 @@
 $ ->
-  @game = new Game
+  game = new Game
 
-  r = @renderer = new Renderer @game, ->
+  LOG "Game is #{@game}"
+
+  r = @renderer = new Renderer game, ->
     LOG 'Renderer callback executed'
 
+    frameCount = 0
     mainLoop = ->
-      actor.animate() for actor in @game.actors
+      for actor in game.actors
+        actor.move    frameCount
+        actor.animate frameCount
 
       r.render()
       requestAnimationFrame mainLoop
 
+      frameCount++
+
+    # Here we go!
     mainLoop()
