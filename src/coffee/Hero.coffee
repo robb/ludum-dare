@@ -5,7 +5,7 @@ class Hero extends Actor
 
     super
 
-  animate: (frameCount) ->
+  updateSprite: (frameCount) ->
     switch @state
       # Idle automation
       when 'default'
@@ -16,4 +16,4 @@ class Hero extends Actor
             @spriteIndex = 0
       when 'walking'
         # Walking frames are 2 through 7
-        @spriteIndex = 2 + Math.floor((frameCount - @walkingStart) / 4) % 6
+        @spriteIndex = 2 + Math.floor(frameCount / 4) % 6

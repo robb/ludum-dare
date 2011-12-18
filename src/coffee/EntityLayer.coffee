@@ -15,7 +15,7 @@ class EntityLayer extends Layer
       y = (y - sprite.height) | 0
 
       # Flip the sprite if the direction is left (default is right).
-      if actor.direction is 'left'
+      if entity.direction is 'left'
         flipped = document.createElement 'canvas'
         flipped.width  = sprite.width
         flipped.height = sprite.height

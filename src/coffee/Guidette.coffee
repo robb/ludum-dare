@@ -2,10 +2,11 @@ class Guidette extends Actor
   constructor: ->
     @name   = 'Snookie'
     @sprite = 'guidette'
+    @hitbox = {width: 30, height: 46}
 
     super
 
-  animate: (frameCount) ->
+  updateSprite: (frameCount) ->
     switch @state
       when 'walking'
         # Walking frames are 10 through 15

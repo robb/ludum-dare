@@ -1,40 +1,34 @@
 class Game
   constructor: ->
+    # Actors
     @hero     = new Hero     @
     @emo      = new Emo      @
     @pothead  = new Pothead  @
     @hipster  = new Hipster  @
     @guidette = new Guidette @
 
-    @actors = [
+    # Objects
+    @stereo = new Stereo @
+
+    @entities = [
       @pothead,
       @emo,
-      @guidette
+      @guidette,
       @hero,
-      @hipster
+      @hipster,
+      @stereo
     ]
 
-    @hero.position = x:  52, y: 145
-    @hero.target   = x: 102, y: 150
-
-    @emo.position      = @emo.target      = x:  32, y: 144
-    @emo.state = 'talking'
-
-    @pothead.position  = @pothead.target  = x: 300, y: 142
-
-    @hipster.position  = @hipster.target  = x: 124, y: 150
+    # Set up entities
+    @hero.position     = x:  52, y: 145
+    @emo.position      = x:  32, y: 144
+    @emo.state         = 'talking'
+    @pothead.position  = x: 300, y: 142
+    @hipster.position  = x: 124, y: 150
     @hipster.state     = 'typing'
 
-    @guidette.position = @guidette.target = x: 262, y: 142
+    @guidette.position = x: 262, y: 142
+    @stereo.position   = x: 222, y: 141
 
-    setTimeout =>
-      @hero.target = x: 232, y: 142
-    , 4200
-
-    setTimeout =>
-      @hero.target = x:  52, y: 145
-    , 8500
-
-    setTimeout =>
-      @emo.target = x: 180, y: 147
-    , 9200
+    @emo.walkTo 180, 147, =>
+      @emo.walkTo 20, 147

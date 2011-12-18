@@ -2,17 +2,18 @@ class Emo extends Actor
   constructor: ->
     @name   = 'Erik'
     @sprite = 'emo'
+    @hitbox = {width: 28, height: 59}
 
     @properties =
       hasCigarettes: yes
 
     super
 
-  animate: (frameCount) ->
+  updateSprite: (frameCount) ->
     switch @state
       when 'walking'
         # Walking frames are 7 through 12
-        @spriteIndex = 7 + Math.floor((frameCount - @walkingStart) / 4) % 6
+        @spriteIndex = 7 + Math.floor(frameCount / 4) % 6
       when 'talking'
         switch Math.round(frameCount / 5) % 2
           when 0 then @spriteIndex = 0

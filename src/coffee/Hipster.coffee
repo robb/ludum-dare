@@ -1,11 +1,12 @@
 class Hipster extends Actor
   constructor: ->
-    @name   = 'Hannes'
-    @sprite = 'hipster'
-
     super
 
-  animate: (frameCount) ->
+    @name   = 'Hannes'
+    @sprite = 'hipster'
+    @hitbox = {width: 27, height: 55}
+
+  updateSprite: (frameCount) ->
     switch @state
       # Idle automation
       when 'typing'

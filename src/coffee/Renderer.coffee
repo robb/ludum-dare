@@ -11,10 +11,10 @@ class Renderer
       LOG 'Sprite store callback executed'
 
       @backgroundLayer = new BackgroundLayer @
-      @actorLayer      = new ActorLayer      @, @game
+      @entityLayer     = new EntityLayer     @, @game
 
       @layers = [
-        @backgroundLayer, @actorLayer
+        @backgroundLayer, @entityLayer
       ]
 
       callback?()

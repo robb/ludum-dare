@@ -60,7 +60,7 @@ class SpriteStore
 
   # Describes all assets
   @Assets:
-    'actors':
+    'entities':
       'pothead':
         size:    {width: 31, height: 50}
         file:    'pothead.png'
@@ -84,6 +84,10 @@ class SpriteStore
         size:        {width: 30, height: 46}
         file:        'guidette.png'
         spriteCount: 16
+
+      'stereo':
+        size: {width: 23, height: 29}
+        file: 'stereo.png'
 
     'backgrounds':
       'flat':

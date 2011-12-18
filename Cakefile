@@ -8,13 +8,16 @@ buildFiles = [
   'Renderer',
   'Layer',
   'BackgroundLayer',
-  'ActorLayer',
+  'EntityLayer',
+  'InteractionController',
+  'Entity',
   'Actor',
   'Emo',
   'Pothead',
   'Hipster',
   'Hero',
   'Guidette',
+  'Stereo',
   'Game',
   'Main'
 ]
