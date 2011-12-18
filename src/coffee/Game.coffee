@@ -18,6 +18,7 @@ class Game
     @hero.target   = x: 102, y: 150
 
     @emo.position      = @emo.target      = x:  32, y: 144
+    @emo.state = 'talking'
 
     @pothead.position  = @pothead.target  = x: 300, y: 142
 
@@ -25,11 +26,14 @@ class Game
     @hipster.state     = 'typing'
 
     @guidette.position = @guidette.target = x: 262, y: 142
-    @guidette.state    = 'talking'
 
     setTimeout =>
       @hero.target = x: 232, y: 142
     , 4200
+
+    setTimeout =>
+      @hero.target = x:  52, y: 145
+    , 8500
 
     setTimeout =>
       @emo.target = x: 180, y: 147

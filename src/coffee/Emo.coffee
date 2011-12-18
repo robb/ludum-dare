@@ -14,7 +14,9 @@ class Emo extends Actor
         # Walking frames are 7 through 12
         @spriteIndex = 7 + Math.floor((frameCount - @walkingStart) / 4) % 6
       when 'talking'
-
+        switch Math.round(frameCount / 5) % 2
+          when 0 then @spriteIndex = 0
+          when 1 then @spriteIndex = 2
       else
         switch Math.round((32 + frameCount) / 5) % 50
           # Blink
