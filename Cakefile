@@ -8,6 +8,7 @@ buildFiles = [
   'Renderer',
   'Layer',
   'BackgroundLayer',
+  'ForegroundLayer',
   'EntityLayer',
   'InteractionController',
   'Entity',

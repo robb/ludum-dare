@@ -91,9 +91,13 @@ class SpriteStore
         file: 'stereo.png'
 
     'backgrounds':
-      'flat':
+      'flat-background':
         size: {width: 839, height: 163}
-        file: 'flat.png'
+        file: 'flat-background.png'
+
+      'flat-foreground':
+        size: {width: 255, height: 162}
+        file: 'flat-foreground.png'
 
 #      'bathroom':
 #        size: {width: 1024, height: 748}

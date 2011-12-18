@@ -12,9 +12,10 @@ class Renderer
 
       @backgroundLayer = new BackgroundLayer @
       @entityLayer     = new EntityLayer     @, @game
+      @foregroundLayer = new ForegroundLayer @
 
       @layers = [
-        @backgroundLayer, @entityLayer
+        @backgroundLayer, @entityLayer, @foregroundLayer
       ]
 
       callback?()
