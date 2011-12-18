@@ -2,7 +2,6 @@ class Hero extends Actor
   constructor: ->
     @name   = 'Hero'
     @sprite = 'hero'
-    @spriteIndex = 1
 
     super
 

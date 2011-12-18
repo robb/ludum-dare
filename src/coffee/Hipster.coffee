@@ -6,13 +6,10 @@ class Hipster extends Actor
     super
 
   animate: (frameCount) ->
-    seconds = Math.round(frameCount / 60)
-
     switch @state
       # Idle automation
-      when 'default'
-        switch seconds % 15
-          # Raise bottle
-          when 5, 9, 10, 13 then @spriteIndex = 1
-          else
-            @spriteIndex = 0
+      when 'typing'
+        if frameCount % 3 is 0
+          @spriteIndex = 1 + Math.floor(Math.random() * 4)
+      else
+        @spriteIndex = 0

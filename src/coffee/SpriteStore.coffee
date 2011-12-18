@@ -66,18 +66,24 @@ class SpriteStore
         file:    'pothead.png'
 
       'emo':
-        size:    {width: 30, height: 60}
-        file:    'emo.png'
+        size:        {width: 28, height: 59}
+        file:        'emo.png'
+        spriteCount: 13
 
       'hipster':
-        size:        {width: 19, height: 54}
+        size:        {width: 27, height: 55}
         file:        'mitte-hipster.png'
-        spriteCount: 2
+        spriteCount: 5
 
       'hero':
         size:        {width: 27, height: 56}
         file:        'hero.png'
         spriteCount: 8
+
+      'guidette':
+        size:        {width: 30, height: 46}
+        file:        'guidette.png'
+        spriteCount: 16
 
     'backgrounds':
       'flat':

@@ -14,6 +14,7 @@ buildFiles = [
   'Pothead',
   'Hipster',
   'Hero',
+  'Guidette',
   'Game',
   'Main'
 ]

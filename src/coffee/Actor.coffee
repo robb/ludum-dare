@@ -1,11 +1,11 @@
 class Actor
-  constructor: ->
+  constructor: (@game) ->
     @position    = {x: 0, y: 0}
     @target      = {x: 0, y: 0}
     @direction   = 'right'
     @state       = 'default'
     @spriteIndex = 0
-    @speed       = 3
+    @speed       = {x: 3, y: 0.3}
 
   move: (frameCount) ->
     if @position.x is @target.x and
@@ -25,19 +25,19 @@ class Actor
 
     # Every @speed frames, move towards the target
     if (@walkingStart - frameCount) % 2 is 0
-      if -@speed < @position.x - @target.x < @speed
+      if -@speed.x < @position.x - @target.x < @speed.x
         @position.x = @target.x
       else if @position.x < @target.x
-        @position.x += @speed
+        @position.x += @speed.x
       else
-        @position.x -= @speed
+        @position.x -= @speed.x
 
-      if -@speed < @position.y - @target.y < @speed
+      if -@speed.y < @position.y - @target.y < @speed.y
         @position.y = @target.y
       else if @position.y < @target.y
-        @position.y += @speed
+        @position.y += @speed.y
       else
-        @position.y -= @speed
+        @position.y -= @speed.y
 
 
   animate: (frameCount) ->
