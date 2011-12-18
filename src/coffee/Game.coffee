@@ -28,7 +28,7 @@ class Game
     @hipster.state     = 'typing'
 
     @guidette.position = x: 262, y: 142
-    @stereo.position   = x: 222, y: 141
+    @stereo.position   = x: 402, y: 140
 
     @emo.walkTo 180, 147, =>
       @emo.walkTo 20, 147

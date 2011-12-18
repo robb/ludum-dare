@@ -6,5 +6,6 @@ class Stereo extends Entity
 
     super
 
-  action: ->
-
+  clickAction: ->
+    @game.hero.walkTo @position.x - 20, @position.y + 2, =>
+      alert "Boom"

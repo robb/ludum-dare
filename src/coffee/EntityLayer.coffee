@@ -9,8 +9,6 @@ class EntityLayer extends Layer
       sprite = @getSprite 'entities', entity.sprite, entity.spriteIndex
       {x, y} = entity.position
 
-      @context.fillRect x, y, 1, 1 if DEBUG
-
       x = (x - Math.floor(sprite.width / 2)) | 0
       y = (y - sprite.height) | 0
 

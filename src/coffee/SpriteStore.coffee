@@ -45,6 +45,7 @@ class SpriteStore
               catch error
                 LOG "Encountered error #{error} while loading sprite: #{sprite}"
                 LOG "Sprite file may be too small" if error.name is "INDEX_SIZE_ERR"
+                throw error
                 break
 
             # Execute callback after loading the last asset
@@ -91,7 +92,7 @@ class SpriteStore
 
     'backgrounds':
       'flat':
-        size: {width: 700, height: 184}
+        size: {width: 839, height: 163}
         file: 'flat.png'
 
 #      'bathroom':
