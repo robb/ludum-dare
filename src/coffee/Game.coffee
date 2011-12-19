@@ -78,8 +78,8 @@ class Game
 
     # Set up entities
     @hero.position     = x:  52, y: 145
-    @emo.position      = x:  32, y: 144
-    @emo.state         = 'talking'
+    @emo.position      = x: 635, y: 144
+    @emo.state         = 'smoking'
     @hipster.position  = x: 333, y: 150
     @hipster.state     = 'typing'
 
