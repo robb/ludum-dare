@@ -9,5 +9,4 @@ class Stereo extends Entity
   clickAction: ->
     @game.hero.walkTo @position.x - 20, @position.y + 2, =>
       @game.hero.direction = 'right'
-      @game.hero.say "Wow, what a dusty stereo!", =>
-        @game.hero.say "Looks like there is something in the CD drive"
+      @game.hero.say "Wow, that's one dusty HiFi!"

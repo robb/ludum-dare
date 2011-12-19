@@ -1,5 +1,8 @@
 class Game
   constructor: ->
+    # The game consists of 5 rounds
+    @currentRound = 0
+
     # Actors
     @hero     = new Hero     @
     @emo      = new Emo      @
@@ -78,19 +81,19 @@ class Game
 
     # Set up entities
     @hero.position     = x:  52, y: 145
-    @emo.position      = x: 635, y: 144
+    @emo.position      = x: 642, y: 144
     @emo.state         = 'smoking'
     @hipster.position  = x: 333, y: 150
     @hipster.state     = 'typing'
 
     @guidette.position = x: 262, y: 142
 
-    @student.position  = x: 292, y: 142
+    @student.position  = x: 192, y: 142
     @student.direction = 'left'
     @student.sate      = 'talking'
 
     @nerd.position     = x: 535, y: 142
 
-    @stereo.position   = x: 332, y: 140
+    @stereo.position   = x: 302, y: 140
     @computer.position = x: 332, y: 155
     @couch.position    = x: 160, y: 140

@@ -26,3 +26,24 @@ class Nerd extends Actor
         @spriteIndex = 3 if f == 15
         @spriteIndex = 4 if 16 <= f <= 20
         @spriteIndex = 5 if 21 <= f <= 30
+
+  clickAction: ->
+    # # Round 1
+    if @game.currentRound is 0
+      {x, y} = @position
+      @game.hero.walkTo x - 25, y, =>
+        @game.isLocked = yes
+
+        @say "Bla bla bla", =>
+          @game.hero.say "Blo Blo Blo", =>
+            @say "Blo Blo Blo", =>
+              @say "Blo Blo Blo", =>
+                @say "Blo Blo Blo", =>
+                  @say "Blo Blo Blo", =>
+                    @say "Blo Blo Blo", =>
+                      @say "Blo Blo Blo", =>
+                        @say "Blo Blo Blo", =>
+                          @say "Blo Blo Blo", =>
+                            @say "Blo Blo Blo", =>
+                              @say "Blo Blo Blo", =>
+                                @say "Blo Blo Blo"

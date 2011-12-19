@@ -32,3 +32,32 @@ class Guidette extends Actor
           when 4, 5, 63, 65, 83, 84 then @spriteIndex = 1
           else
             @spriteIndex = 0
+
+  clickAction: ->
+    # # Round 1
+    if @game.currentRound is 0
+      {x, y} = @position
+      @game.hero.walkTo x + 25, y, =>
+        @game.isLocked = yes
+
+        @game.hero.direction = 'left'
+        @direction           = 'right'
+
+        @say "Woohoo, 18 hours without sleep.", =>
+          @say "I'm a party machine!", =>
+            @state = 'dancing'
+            @game.isLocked = no
+
+    # # Round 2
+    if @game.currentRound is 1
+      {x, y} = @position
+      @game.hero.walkTo x + 25, y, =>
+        @game.isLocked = yes
+
+        @game.hero.direction = 'left'
+        @direction           = 'right'
+
+        @say "That Hipster over there with the laptop?", =>
+          @say "He has like no taste in music", =>
+            @state = 'default'
+            @game.isLocked = no

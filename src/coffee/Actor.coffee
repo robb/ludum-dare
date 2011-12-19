@@ -50,7 +50,7 @@ class Actor extends Entity
 
     @action = (frameCount) =>
       unless executed
-        $('#speech').css top: @position.y - 100, left: @position.x - 50
+        $('#speech').css top: @position.y - 75, left: @position.x
         $('#speech').text text
         executed = yes
 

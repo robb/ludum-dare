@@ -32,3 +32,77 @@ class Student extends Actor
           when 0, 1, 53, 55, 83 then @spriteIndex = 3
           else
             @spriteIndex = 0
+
+  clickAction: ->
+    # # Round 1
+    if @game.currentRound is 0
+      {x, y} = @position
+      @game.hero.walkTo x - 25, y, =>
+        @game.isLocked       = yes
+        @game.hero.direction = 'right'
+        @direction           = 'left'
+
+        # Hero and student talk to each other
+        @say "¡Hey!", =>
+          @say "Would you mind showing me around town?", =>
+            @say "(nudge nudge)", =>
+              @say "I'm new here.", =>
+                @say "(wink wink)", =>
+                  @game.hero.say "Blo Blo Blo", =>
+                    @say "Laber Laber", =>
+                      # Student walks to the balcony
+                      @walkTo @game.emo.position.x - 20, @game.emo.position.y, =>
+                        # Student and Emo look at each other
+                        @direction          = 'right'
+                        @game.emo.direction = 'left'
+                        # Student talks to the Emo
+                        @say "La Ti Da", =>
+                          @game.emo.say "Ho Ho Ho", =>
+                            @say "Jumped Di Bumbel", =>
+                              @game.emo.say "Boom Shakalaka", =>
+                                # Emo walks into the kitchen
+                                @walkTo @game.emo.position.x,
+                                        @game.emo.position.y
+                                @game.emo.walkTo @game.nerd.position.x - 50, @game.nerd.position.y, =>
+                                  @game.emo.state = 'smoking'
+                                  @game.nerd.say "Hust Hust", =>
+                                    @game.nerd.walkTo -20, 144, =>
+                                      @game.isLocked = no
+                                      @game.currentRound = 1
+
+  clickAction: ->
+    # # Round 1
+    if @game.currentRound is 0
+      {x, y} = @position
+      @game.hero.walkTo x - 25, y, =>
+        @game.isLocked       = yes
+        @game.hero.direction = 'right'
+        @direction           = 'left'
+
+        # Hero and student talk to each other
+        @say "¡Hey!", =>
+          @say "Would you mind showing me around town?", =>
+            @say "(nudge nudge)", =>
+              @say "I'm new here.", =>
+                @say "(wink wink)", =>
+                  @game.hero.say "Blo Blo Blo", =>
+                    @say "Laber Laber", =>
+                      # Student walks to the balcony
+                      @walkTo @game.emo.position.x - 20, @game.emo.position.y, =>
+                        # Student and Emo look at each other
+                        @direction          = 'right'
+                        @game.emo.direction = 'left'
+                        # Student talks to the Emo
+                        @say "La Ti Da", =>
+                          @game.emo.say "Ho Ho Ho", =>
+                            @say "Jumped Di Bumbel", =>
+                              @game.emo.say "Boom Shakalaka", =>
+                                # Emo walks into the kitchen
+                                @walkTo @game.emo.position.x,
+                                        @game.emo.position.y
+                                @game.emo.walkTo @game.nerd.position.x - 50, @game.nerd.position.y, =>
+                                  @game.emo.state = 'smoking'
+                                  @game.nerd.say "Hust Hust", =>
+                                    @game.nerd.walkTo -20, 144, =>
+                                      @game.isLocked = no
+                                      @game.currentRound = 1

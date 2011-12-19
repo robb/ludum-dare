@@ -9,4 +9,4 @@ class Couch extends Entity
   clickAction: ->
     @game.hero.walkTo @position.x - 20, @position.y + 2, =>
       @game.hero.direction = 'right'
-      @game.hero.say "Hmm, looks comfy"
+      @game.hero.say "Hmm, looks couchy!"

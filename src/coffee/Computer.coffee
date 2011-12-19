@@ -7,6 +7,7 @@ class Computer extends Entity
     super
 
   clickAction: ->
-    @game.hero.walkTo @position.x + 25, @position.y + 2, =>
-      @game.hero.direction = 'left'
-      @game.hero.say "A MacBook Air!"
+    @game.hero.walkTo @position.x - 25, @position.y - 4, =>
+      @game.hero.direction = 'right'
+      @game.hero.say "Only two pixels thick,
+                      it's the thinnes and lightest in the industry."
