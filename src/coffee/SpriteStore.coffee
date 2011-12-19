@@ -85,6 +85,10 @@ class SpriteStore
         size:        {width: 20, height: 55}
         spriteCount: 17
 
+      'nerd':
+        size:        {width: 20, height: 45}
+        spriteCount: 18
+
       # Objects
       'stereo':
         size: {width: 23, height: 29}
