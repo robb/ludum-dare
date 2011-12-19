@@ -5,7 +5,7 @@ class Game
     @emo      = new Emo      @
     @hipster  = new Hipster  @
     @guidette = new Guidette @
-#    @student  = new Student  @
+    @student  = new Student  @
 #    @nerd     = new Nerd     @
 #    @princess = new Princess @
 #
@@ -43,7 +43,7 @@ class Game
       @emo,
       @hipster,
       @guidette,
-#      @student,
+      @student,
 #      @nerd,
 #      @princess,
 #
@@ -80,14 +80,19 @@ class Game
     @hero.position     = x:  52, y: 145
     @emo.position      = x:  32, y: 144
     @emo.state         = 'talking'
-    @hipster.position  = x: 124, y: 150
+    @hipster.position  = x: 333, y: 150
     @hipster.state     = 'typing'
 
     @guidette.position = x: 262, y: 142
 
-    @stereo.position   = x: 402, y: 140
+    @student.position  = x: 292, y: 142
+    @student.direction = 'left'
+    @student.sate      = 'talking'
+
+    @stereo.position   = x: 332, y: 140
+    @computer.position = x: 332, y: 155
     @couch.position    = x: 160, y: 140
-    @computer.position = x: 122, y: 155
 
     @emo.walkTo 180, 145, =>
       @emo.walkTo 150, 147
+

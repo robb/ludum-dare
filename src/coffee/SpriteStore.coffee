@@ -61,6 +61,7 @@ class SpriteStore
   # Describes all assets
   @Assets:
     'entities':
+      # Students
       'pothead':
         size:    {width: 31, height: 50}
 
@@ -80,6 +81,11 @@ class SpriteStore
         size:        {width: 30, height: 55}
         spriteCount: 30
 
+      'student':
+        size:        {width: 20, height: 55}
+        spriteCount: 17
+
+      # Objects
       'stereo':
         size: {width: 23, height: 29}
 
@@ -143,10 +149,10 @@ class SpriteStore
 
     'backgrounds':
       'flat-background':
-        size: {width: 839, height: 163}
+        size: {width: 746, height: 163}
 
       'flat-foreground':
-        size: {width: 255, height: 162}
+        size: {width: 746, height: 163}
 
 #      'bathroom':
 #        size: {width: 1024, height: 748}
