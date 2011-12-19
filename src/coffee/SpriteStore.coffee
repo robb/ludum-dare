@@ -74,7 +74,7 @@ class SpriteStore
 
       'hero':
         size:        {width: 27, height: 56}
-        spriteCount: 8
+        spriteCount: 13
 
       'guidette':
         size:        {width: 30, height: 46}

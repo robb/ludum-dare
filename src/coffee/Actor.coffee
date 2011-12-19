@@ -8,6 +8,8 @@ class Actor extends Entity
     super
 
   walkTo: (x, y, next) ->
+    @resetAction() if @action
+
     @state = 'walking' unless @position.x is x and @position.y is y
 
     @action = (frameCount) =>
@@ -39,27 +41,30 @@ class Actor extends Entity
           @position.y -= @speed.y
 
   say: (text, next) ->
+    @resetAction() if @action
+
     @state = 'talking'
 
-    wordCount = text.split(' ').length
+    executed = no
+    frames   = 20 * text.split(' ').length
 
     @action = (frameCount) =>
-      LOG "#{@name}: #{text}"
+      unless executed
+        $('#speech').css top: @position.y - 100, left: @position.x - 50
+        $('#speech').text text
+        executed = yes
 
-      $('#speech').css top: @position.y - 100, left: @position.x - 50
-
-
-      $('#speech').text text
-      @action = null
-      setTimeout =>
+      if --frames < 0
+        @action = null
         @state  = 'default'
         $('#speech').text ''
-
-        @action = next
-      , 500 * wordCount
+        next?()
+        return
 
   performAction: (frameCount) ->
     @action?(frameCount)
 
-  resetActions: ->
-    @actionQueue = []
+  resetAction: ->
+    @action = null
+    @state  = 'default'
+    $('#speech').text ''
