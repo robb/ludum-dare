@@ -82,11 +82,11 @@ class SpriteStore
         spriteCount: 30
 
       'student':
-        size:        {width: 20, height: 55}
+        size:        {width: 20, height: 51}
         spriteCount: 17
 
       'nerd':
-        size:        {width: 20, height: 45}
+        size:        {width: 20, height: 51}
         spriteCount: 18
 
       # Objects
