@@ -1,0 +1,1 @@
+class BathroomDoor extends Entity

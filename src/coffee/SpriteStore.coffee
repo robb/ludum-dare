@@ -45,13 +45,12 @@ class SpriteStore
               catch error
                 LOG "Encountered error #{error} while loading sprite: #{sprite}"
                 LOG "Sprite file may be too small" if error.name is "INDEX_SIZE_ERR"
-                throw "#{name} : #{error}"
                 break
 
             # Execute callback after loading the last asset
             callback?() if --assets is 0
 
-          spriteImage.src    = "/img/#{group}/#{sprite.file}"
+          spriteImage.src    = "/img/#{group}/#{name}.png"
 
   getSprite: (group, name, index = 0) ->
     unless sprite = @sprites[group]?[name]?[index]
@@ -64,49 +63,90 @@ class SpriteStore
     'entities':
       'pothead':
         size:    {width: 31, height: 50}
-        file:    'pothead.png'
 
       'emo':
         size:        {width: 28, height: 59}
-        file:        'emo.png'
         spriteCount: 13
 
       'hipster':
         size:        {width: 27, height: 55}
-        file:        'mitte-hipster.png'
         spriteCount: 5
 
       'hero':
         size:        {width: 27, height: 56}
-        file:        'hero.png'
         spriteCount: 8
 
       'guidette':
         size:        {width: 30, height: 46}
-        file:        'guidette.png'
         spriteCount: 16
 
       'stereo':
         size: {width: 23, height: 29}
-        file: 'stereo.png'
 
       'couch':
         size: {width: 77, height: 34}
-        file: 'couch.png'
 
       'computer':
         size:        {width: 19, height: 34}
-        file:        'computer.png'
         spriteCount: 2
+
+#      'cactus':
+#        size:    {width: 31, height: 50}
+#
+#      'entrance-door':
+#        size:    {width: 31, height: 50}
+#
+#      'bedroom-door':
+#        size:    {width: 31, height: 50}
+#
+#      'bathroom-door':
+#        size:    {width: 31, height: 50}
+#
+#      'poster':
+#        size:    {width: 31, height: 50}
+#
+#      'lamp':
+#        size:    {width: 31, height: 50}
+#
+#      'table':
+#        size:    {width: 31, height: 50}
+#
+#      'speaker':
+#        size:    {width: 31, height: 50}
+#
+#      'rug':
+#        size:    {width: 31, height: 50}
+#
+#      'plant':
+#        size:    {width: 31, height: 50}
+#
+#      'mop':
+#        size:    {width: 31, height: 50}
+#
+#      'uplight':
+#        size:    {width: 31, height: 50}
+#
+#      'kitchen-chair':
+#        size:    {width: 31, height: 50}
+#
+#      'clock':
+#        size:    {width: 31, height: 50}
+#
+#      'beer-crates':
+#        size:    {width: 31, height: 50}
+#
+#      'plant-pot':
+#        size:    {width: 31, height: 50}
+#
+#      'moon':
+#        size:    {width: 31, height: 50}
 
     'backgrounds':
       'flat-background':
         size: {width: 839, height: 163}
-        file: 'flat-background.png'
 
       'flat-foreground':
         size: {width: 255, height: 162}
-        file: 'flat-foreground.png'
 
 #      'bathroom':
 #        size: {width: 1024, height: 748}

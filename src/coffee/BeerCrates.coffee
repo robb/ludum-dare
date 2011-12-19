@@ -1,0 +1,1 @@
+class BeerCrates extends Entity

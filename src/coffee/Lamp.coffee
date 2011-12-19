@@ -1,0 +1,1 @@
+class Lamp extends Entity

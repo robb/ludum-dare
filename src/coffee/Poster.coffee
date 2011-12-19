@@ -1,0 +1,1 @@
+class Poster extends Entity

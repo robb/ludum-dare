@@ -1,0 +1,1 @@
+class KitchenChair extends Entity

@@ -1,0 +1,1 @@
+class EntranceDoor extends Entity

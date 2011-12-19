@@ -1,0 +1,1 @@
+class Mop extends Entity

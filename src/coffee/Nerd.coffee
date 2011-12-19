@@ -1,0 +1,1 @@
+class Nerd extends Actor
