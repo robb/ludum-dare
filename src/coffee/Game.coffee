@@ -84,6 +84,7 @@ class Game
     @hipster.state     = 'typing'
 
     @guidette.position = x: 262, y: 142
+
     @stereo.position   = x: 402, y: 140
     @couch.position    = x: 160, y: 140
     @computer.position = x: 122, y: 155

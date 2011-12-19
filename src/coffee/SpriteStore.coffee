@@ -77,8 +77,8 @@ class SpriteStore
         spriteCount: 13
 
       'guidette':
-        size:        {width: 30, height: 46}
-        spriteCount: 16
+        size:        {width: 30, height: 55}
+        spriteCount: 30
 
       'stereo':
         size: {width: 23, height: 29}
