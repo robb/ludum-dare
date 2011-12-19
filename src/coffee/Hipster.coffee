@@ -14,3 +14,8 @@ class Hipster extends Actor
           @spriteIndex = 1 + Math.floor(Math.random() * 4)
       else
         @spriteIndex = 0
+
+  clickAction: ->
+    @game.hero.walkTo @position.x + 20, @position.y, =>
+      @game.hero.direction = 'left'
+      @game.hero.say "Pah, hipster"

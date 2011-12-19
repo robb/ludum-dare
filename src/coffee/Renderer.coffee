@@ -3,8 +3,8 @@ class Renderer
     LOG 'Initializing Renderer'
 
     @mainCanvas = document.getElementById Settings.mainCanvasID
-    @mainCanvas.width  = 1024
-    @mainCanvas.height = 768
+    @mainCanvas.width  = 839
+    @mainCanvas.height = 163
     @mainContext = @mainCanvas.getContext '2d'
 
     @spriteStore = new SpriteStore =>

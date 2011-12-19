@@ -6,9 +6,10 @@ class Game
     @pothead  = new Pothead  @
     @hipster  = new Hipster  @
     @guidette = new Guidette @
-
     # Objects
-    @stereo = new Stereo @
+    @stereo   = new Stereo   @
+    @couch    = new Couch    @
+    @computer = new Computer @
 
     @entities = [
       @pothead,
@@ -16,7 +17,9 @@ class Game
       @guidette,
       @hero,
       @hipster,
-      @stereo
+      @stereo,
+      @couch,
+      @computer
     ]
 
     # Set up entities
@@ -29,6 +32,8 @@ class Game
 
     @guidette.position = x: 262, y: 142
     @stereo.position   = x: 402, y: 140
+    @couch.position    = x: 160, y: 140
+    @computer.position = x: 122, y: 155
 
-    @emo.walkTo 180, 147, =>
-      @emo.walkTo 20, 147
+    @emo.walkTo 180, 145, =>
+      @emo.walkTo 150, 147

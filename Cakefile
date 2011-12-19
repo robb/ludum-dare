@@ -19,6 +19,8 @@ buildFiles = [
   'Hero',
   'Guidette',
   'Stereo',
+  'Couch',
+  'Computer',
   'Game',
   'Main'
 ]
