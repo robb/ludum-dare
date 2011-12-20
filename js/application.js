@@ -1484,7 +1484,7 @@ DEBUG = true;(function() {
               return typeof callback === "function" ? callback() : void 0;
             }
           };
-          return spriteImage.src = "/img/" + group + "/" + name + ".png";
+          return spriteImage.src = "./img/" + group + "/" + name + ".png";
         };
         for (name in sprites) {
           if (!__hasProp.call(sprites, name)) continue;
