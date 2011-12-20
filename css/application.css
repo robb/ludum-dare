@@ -1,0 +1,21 @@
+body {
+  font-family: Helvetica, Arial, sans;
+  background: #111111;
+  color: #eeeeee;
+  image-rendering: -moz-crisp-edges;
+  position: relative; }
+
+#speech {
+  display: block;
+  width: 150px;
+  margin-left: -75px;
+  text-align: center;
+  color: #eeeeee;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans;
+  font-weight: 700;
+  position: absolute;
+  text-shadow: 1px 1px 0 black, 0 0 1px black; }
+
+.hero {
+  color: #5e85ba; }
