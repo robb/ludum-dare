@@ -70,8 +70,8 @@ class SpriteStore
         spriteCount: 13
 
       'hipster':
-        size:        {width: 27, height: 55}
-        spriteCount: 5
+        size:        {width: 30, height: 55}
+        spriteCount: 13
 
       'hero':
         size:        {width: 27, height: 56}
@@ -88,6 +88,10 @@ class SpriteStore
       'nerd':
         size:        {width: 20, height: 51}
         spriteCount: 18
+
+      'princess':
+        size:        {width: 30, height: 51}
+        spriteCount: 13
 
       # Objects
       'stereo':

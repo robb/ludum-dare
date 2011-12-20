@@ -61,3 +61,69 @@ class Guidette extends Actor
           @say "He has like no taste in music", =>
             @state = 'default'
             @game.isLocked = no
+
+
+    # # Round 3
+    if @game.currentRound is 2
+      {x, y} = @position
+      @game.hero.walkTo x + 25, y, =>
+        @game.isLocked = yes
+
+        @game.hero.direction = 'left'
+        @direction           = 'right'
+
+        @say "This music sucks, I guess it's up to me now", =>
+          @game.hipster.walkTo 313, 150, =>
+            @game.hipster.right
+
+          @walkTo 333, 150, =>
+            @say "Oh yeah baby!", =>
+              @say "Bring it on!", =>
+                @state = 'dancing'
+
+                @game.hipster.say "O my god!", =>
+                  @game.hipster.say "I'm outta here", =>
+                    @game.hipster.walkTo -20, 144, =>
+                      @game.currentRound = 3
+                      @game.isLocked = no
+
+    # # Round 4
+    if @game.currentRound is 3
+      {x, y} = @position
+      @game.hero.walkTo x - 25, y, =>
+        @game.isLocked = yes
+
+        @direction           = 'left'
+        @game.hero.direction = 'right'
+
+        @say "That creep in the kitches keeps staring at me.", =>
+          @say "Woohoo!", =>
+            @state = 'dancing'
+            @game.isLocked = no
+
+    # # Round 5
+    if @game.currentRound is 4
+      {x, y} = @position
+      @game.hero.walkTo x - 25, y, =>
+        @game.isLocked = yes
+
+        @direction           = 'left'
+        @game.hero.direction = 'right'
+        @state               = 'default'
+
+        @game.hero.say "Do you see my friend over there, in the kitchen.", =>
+          @say "Uhuh?", =>
+            @game.hero.say "He's kinda, well, the quiet type.", =>
+              @say "Uhuh?", =>
+                @game.hero.say "But I get the impression he really likes you.", =>
+                  @say "I see what you're getting at…", =>
+                    @walkTo @game.emo.position.x - 20, @game.emo.position.y, =>
+                      @direction = 'right'
+                      @say "*whispers in his ear*", =>
+                        @state = 'dancing'
+                        @game.emo.say "Oh Christ, no!", =>
+                          @game.emo.walkTo -20, 144, =>
+                            @say "Wait for me!", =>
+                              @walkTo -20, 144, =>
+                                @game.isLocked = no
+                                @game.currentRound = 5

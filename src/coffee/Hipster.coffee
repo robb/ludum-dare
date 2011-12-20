@@ -8,7 +8,8 @@ class Hipster extends Actor
 
   updateSprite: (frameCount) ->
     switch @state
-      # Idle automation
+      when 'walking'
+        @spriteIndex = 5 + Math.floor(frameCount / 4) % 6
       when 'typing'
         if frameCount % 3 is 0
           @spriteIndex = 1 + Math.floor(Math.random() * 4)
@@ -41,7 +42,7 @@ class Hipster extends Actor
         @game.student.walkTo x + 25, y, =>
           @game.student.direction = 'left'
 
-        @say "You know, I'm had Berghain guestlist tonight.", =>
+        @say "You know, I had Berghain guestlist tonight.", =>
           @say "But that place is way to touristy for my taste", =>
             @state = 'typing'
 
@@ -57,5 +58,38 @@ class Hipster extends Actor
                         @game.student.say "Oh thank you so much!", =>
                           @game.student.say "See you guys", =>
                             @game.student.walkTo -20, 144, =>
+                              @game.currentRound = 2
+                              @game.isLocked = no
+
+
+    if @game.currentRound is 1
+      {x, y} = @position
+      @game.hero.walkTo x - 29, y, =>
+        @game.isLocked       = yes
+        @state               = 'default'
+        @direction           = 'left'
+        @game.hero.direction = 'right'
+
+        # Hero and emo talk to each other
+        @game.student.walkTo x + 25, y, =>
+          @game.student.direction = 'left'
+
+        @say "You know, I had Berghain guestlist tonight.", =>
+          @say "But that place is way to touristy for my taste", =>
+            @state = 'typing'
+
+            @game.student.say "Did you say Berghain?!", =>
+              @game.student.say "I heard so much of it, where is that club?", =>
+                @state     = 'default'
+                @direction = 'right'
+
+                @say 'Gah, I guess it suits you.', =>
+                  @say "It's…", =>
+                    @say "It's on the corner of Einbahnstraße and Sackgasse", =>
+                      @say "You can't miss it", =>
+                        @game.student.say "Oh thank you so much!", =>
+                          @game.student.say "¡Hasta luego, guys!", =>
+                            @game.student.walkTo -20, 144, =>
+                              @state = 'typing'
                               @game.currentRound = 2
                               @game.isLocked = no

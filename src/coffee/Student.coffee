@@ -81,28 +81,45 @@ class Student extends Actor
 
         # Hero and student talk to each other
         @say "¡Hey!", =>
-          @say "Would you mind showing me around town?", =>
-            @say "(nudge nudge)", =>
-              @say "I'm new here.", =>
-                @say "(wink wink)", =>
-                  @game.hero.say "Blo Blo Blo", =>
-                    @say "Laber Laber", =>
-                      # Student walks to the balcony
-                      @walkTo @game.emo.position.x - 20, @game.emo.position.y, =>
-                        # Student and Emo look at each other
-                        @direction          = 'right'
-                        @game.emo.direction = 'left'
-                        # Student talks to the Emo
-                        @say "La Ti Da", =>
-                          @game.emo.say "Ho Ho Ho", =>
-                            @say "Jumped Di Bumbel", =>
-                              @game.emo.say "Boom Shakalaka", =>
-                                # Emo walks into the kitchen
-                                @walkTo @game.emo.position.x,
-                                        @game.emo.position.y
-                                @game.emo.walkTo @game.nerd.position.x - 50, @game.nerd.position.y, =>
-                                  @game.emo.state = 'smoking'
-                                  @game.nerd.say "Hust Hust", =>
-                                    @game.nerd.walkTo -20, 144, =>
-                                      @game.isLocked = no
-                                      @game.currentRound = 1
+          @say "Do you now if there is still beer around here?", =>
+            @game.hero.say "None in the fridge?", =>
+              @say "Si.", =>
+                @game.hero.say "Have you tried the balcony?", =>
+                  @say "Smart thinking", =>
+                    # Student walks to the balcony
+                    @walkTo @game.emo.position.x - 20, @game.emo.position.y, =>
+                      # Student and Emo look at each other
+                      @direction          = 'right'
+                      @game.emo.direction = 'left'
+                      # Student talks to the Emo
+                      @say "¡Hey!", =>
+                        @game.emo.say "O my", =>
+                          @say "Are you from Berlin?", =>
+                            @say "Do you know any cool clubs around here?", =>
+                              @say "[SUDDEN BURST OF WHITE NOISE]", =>
+                                @say "[MORE WHITE NOISE]", =>
+                                  @game.emo.say "GOD! Leave me alone!", =>
+                                    # Emo walks into the kitchen
+                                    @walkTo @game.emo.position.x,
+                                            @game.emo.position.y
+                                    @game.emo.walkTo @game.nerd.position.x - 50, @game.nerd.position.y, =>
+                                      @game.emo.state = 'smoking'
+                                      @game.nerd.say "(Choke Cough)", =>
+                                        @game.nerd.say "I… can't…", =>
+                                          @game.nerd.say "breathe…", =>
+                                            @game.nerd.walkTo -20, 144, =>
+                                              @game.isLocked = no
+                                              @game.currentRound = 1
+
+    # # Round 1
+    if @game.currentRound is 1
+      {x, y} = @position
+      @game.hero.walkTo x - 25, y, =>
+        @game.isLocked       = yes
+        @game.hero.direction = 'right'
+        @direction           = 'left'
+
+        @say "Bah, I don't care about that idiot anyways.", =>
+          @say "You and I can still have a lot of fun tonight, ", =>
+            @say "don't you think?", =>
+              @game.isLocked = no

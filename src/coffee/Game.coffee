@@ -10,7 +10,7 @@ class Game
     @guidette = new Guidette @
     @student  = new Student  @
     @nerd     = new Nerd     @
-#    @princess = new Princess @
+    @princess = new Princess @
 #
     # Objects
     @stereo                  = new Stereo       @
@@ -48,7 +48,7 @@ class Game
       @guidette,
       @student,
       @nerd,
-#      @princess,
+      @princess,
 #
       # Objects
       @stereo,
@@ -79,8 +79,10 @@ class Game
 #      @keyHole
     ]
 
+
     # Set up entities
     @hero.position     = x:  52, y: 145
+    @princess.position = x: 202, y: 143
     @emo.position      = x: 642, y: 144
     @emo.state         = 'smoking'
     @hipster.position  = x: 333, y: 150
@@ -88,12 +90,12 @@ class Game
 
     @guidette.position = x: 262, y: 142
 
-    @student.position  = x: 192, y: 142
+    @student.position  = x: 462, y: 147
     @student.direction = 'left'
     @student.sate      = 'talking'
 
     @nerd.position     = x: 535, y: 142
 
-    @stereo.position   = x: 302, y: 140
+    @stereo.position   = x: 314, y: 139
     @computer.position = x: 332, y: 155
     @couch.position    = x: 160, y: 140

@@ -1,7 +1,7 @@
 class Actor extends Entity
   constructor: ->
     @direction ?= 'right'
-    @speed     ?= {x: 3, y: 0.7}
+    @speed     ?= {x: 4, y: 0.7}
 
     @action    ?= null
 
@@ -46,7 +46,7 @@ class Actor extends Entity
     @state = 'talking'
 
     executed = no
-    frames   = 20 * text.split(' ').length
+    frames   = 13 * text.split(' ').length
 
     @action = (frameCount) =>
       unless executed

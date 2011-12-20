@@ -2,7 +2,7 @@ class Nerd extends Actor
   constructor: ->
     @name   = 'Steve'
     @sprite = 'nerd'
-    @hitbox = {width: 45, height: 20}
+    @hitbox = {width: 20, height: 51}
 
     super
 
@@ -33,17 +33,18 @@ class Nerd extends Actor
       {x, y} = @position
       @game.hero.walkTo x - 25, y, =>
         @game.isLocked = yes
+        @direction           = 'left'
+        @game.hero.direction = 'right'
 
-        @say "Bla bla bla", =>
-          @game.hero.say "Blo Blo Blo", =>
-            @say "Blo Blo Blo", =>
-              @say "Blo Blo Blo", =>
-                @say "Blo Blo Blo", =>
-                  @say "Blo Blo Blo", =>
-                    @say "Blo Blo Blo", =>
-                      @say "Blo Blo Blo", =>
-                        @say "Blo Blo Blo", =>
-                          @say "Blo Blo Blo", =>
-                            @say "Blo Blo Blo", =>
-                              @say "Blo Blo Blo", =>
-                                @say "Blo Blo Blo"
+        @say "Skyrim bla bla bla", =>
+          @say "Dragon born bla bla bla", =>
+           @say "Dhovakin bla bla bla", =>
+             @say "Thu'um bla bla bla", =>
+               @say "Thieves guild bla bla bla", =>
+                 @say "better than Oblivion", =>
+                   @say "Mammoth bla bla bla", =>
+                     @say "<spoiler alert>", =>
+                       @say "Main quest ends in Sovngarde", =>
+                         @say "</spoiler alert>", =>
+                           @say "Dragons bla bla bla", =>
+                             @game.isLocked = no
