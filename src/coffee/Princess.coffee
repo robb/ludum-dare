@@ -96,4 +96,4 @@ class Princess extends Actor
           @say "Just to be ALONE™ with me?", =>
             @game.hero.say "No.", =>
               @game.hero.say "Just to win Ludum Dare", =>
-                document.location = "http://ludumdare.com"
+                document.location = "http://www.ludumdare.com/compo/ludum-dare-22/?action=rate&uid=7864"
