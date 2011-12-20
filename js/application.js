@@ -2727,7 +2727,7 @@ DEBUG = true;(function() {
             return _this.say("Just to be ALONE™ with me?", function() {
               return _this.game.hero.say("No.", function() {
                 return _this.game.hero.say("Just to win Ludum Dare", function() {
-                  return document.location = "http://ludumdare.com";
+                  return document.location = "http://www.ludumdare.com/compo/ludum-dare-22/?action=rate&uid=7864";
                 });
               });
             });
