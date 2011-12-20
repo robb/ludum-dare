@@ -50,7 +50,7 @@ class SpriteStore
             # Execute callback after loading the last asset
             callback?() if --assets is 0
 
-          spriteImage.src    = "/img/#{group}/#{name}.png"
+          spriteImage.src    = "./img/#{group}/#{name}.png"
 
   getSprite: (group, name, index = 0) ->
     unless sprite = @sprites[group]?[name]?[index]
