@@ -5,6 +5,9 @@ body {
   image-rendering: -moz-crisp-edges;
   position: relative; }
 
+img {
+  display: block; }
+
 #speech {
   display: block;
   width: 150px;
